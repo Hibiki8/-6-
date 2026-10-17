@@ -43,3 +43,24 @@ Contributions are welcome! Please feel free to submit a pull request or open an 
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file for more details.
+# Street Fighter 6 Stats Web
+
+## 起動方法
+
+クローンしたプロジェクトのルートで Spring Boot を起動します。Java 21 が必要です。Maven は Maven Wrapper が取得・実行するため、別途インストールする必要はありません。
+
+```sh
+./mvnw spring-boot:run
+```
+
+`http://localhost:8080/` を開いてください。ルート直下と `sf6-stats-web/` 以下の既存ページ、CSS、JavaScript、コンポーネントは Spring Boot から配信されます。トップページは `GET /api/health` で API 接続を確認します。
+
+テストを実行するには次のコマンドを使います。
+
+```sh
+./mvnw test
+```
+
+## Spring Boot API
+
+- `GET /api/health` — API の稼働状態を JSON (`{"status":"UP"}`) で返します。
